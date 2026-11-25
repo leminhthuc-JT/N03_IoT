@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Trunk -->
+  <rect x="28" y="38" width="8" height="18" rx="2" fill="#6B7280"/>
+  <!-- Canopy - layered leaves -->
+  <ellipse cx="32" cy="30" rx="18" ry="14" fill="#16a34a"/>
+  <ellipse cx="26" cy="26" rx="12" ry="10" fill="#22c55e"/>
+  <ellipse cx="38" cy="28" rx="10" ry="9" fill="#15803d"/>
+  <ellipse cx="32" cy="22" rx="10" ry="9" fill="#4ade80"/>
+  <!-- Ground line -->
+  <rect x="20" y="54" width="24" height="3" rx="1.5" fill="#d1d5db"/>
+</svg>

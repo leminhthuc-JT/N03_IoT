@@ -1,0 +1,59 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "🔨 Build Firmware (PlatformIO)",
+      "type": "shell",
+      "command": "& \"${env:USERPROFILE}\\.platformio\\penv\\Scripts\\pio.exe\" run",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "🌐 Node-RED Start",
+      "type": "shell",
+      "command": "node-red",
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "servers"
+      }
+    },
+    {
+      "label": "📊 Web Dashboard (HTTP Server)",
+      "type": "shell",
+      "command": "python -m http.server 5500",
+      "options": {
+        "cwd": "${workspaceFolder}/web-dashboard"
+      },
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "servers"
+      }
+    },
+    {
+      "label": "🟢 Chạy TẤT CẢ (Node-RED + Dashboard)",
+      "dependsOn": [
+        "🌐 Node-RED Start",
+        "📊 Web Dashboard (HTTP Server)"
+      ],
+      "dependsOrder": "parallel",
+      "problemMatcher": [],
+      "group": "none"
+    }
+  ]
+}

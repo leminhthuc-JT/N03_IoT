@@ -1,0 +1,17 @@
+{
+  "name": "n03-smart-garden-backend",
+  "version": "1.0.0",
+  "description": "N03 Smart Garden Digital Twin Level 4 - Backend REST API, WebSocket & MQTT Bridge",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mqtt": "^5.5.0",
+    "ws": "^8.17.0"
+  }
+}

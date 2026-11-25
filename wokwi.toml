@@ -1,0 +1,9 @@
+# =====================================================================
+# N03 IoT – Wokwi VS Code Extension Config
+# File này cho phép chạy mô phỏng Wokwi ngay trong VS Code
+# =====================================================================
+
+[wokwi]
+version = 1
+firmware = ".pio/build/esp32/firmware.bin"
+elf = ".pio/build/esp32/firmware.elf"

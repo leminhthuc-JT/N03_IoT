@@ -1,0 +1,88 @@
+version: '3.8'
+
+services:
+  # 1. Cơ sở dữ liệu quan hệ PostgreSQL (Lưu thiết bị, lệnh, cấu hình, cảnh báo)
+  postgres:
+    image: postgres:15-alpine
+    container_name: n03-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: n03_garden
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgrespassword
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # 2. Cơ sở dữ liệu chuỗi thời gian InfluxDB (Lưu trữ Telemetry)
+  influxdb:
+    image: influxdb:2.7-alpine
+    container_name: n03-influxdb
+    restart: unless-stopped
+    ports:
+      - "8086:8086"
+    environment:
+      DOCKER_INFLUXDB_INIT_MODE: setup
+      DOCKER_INFLUXDB_INIT_USERNAME: n03admin
+      DOCKER_INFLUXDB_INIT_PASSWORD: n03password123
+      DOCKER_INFLUXDB_INIT_ORG: n03-iot
+      DOCKER_INFLUXDB_INIT_BUCKET: garden-telemetry
+      DOCKER_INFLUXDB_INIT_ADMIN_TOKEN: n03-super-secret-token
+    volumes:
+      - influxdb_data:/var/lib/influxdb2
+
+  # 3. Backend Node.js / Express & WebSocket Server (Cầu nối MQTT HiveMQ và Digital Twin)
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: n03-backend
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+      MQTT_BROKER: mqtt://broker.hivemq.com:1883
+      MQTT_CLIENT_ID: N03-Docker-Backend
+      POSTGRES_ENABLED: "true"
+      POSTGRES_URL: postgresql://postgres:postgrespassword@postgres:5432/n03_garden
+      INFLUX_ENABLED: "true"
+      INFLUX_URL: http://influxdb:8086
+      INFLUX_TOKEN: n03-super-secret-token
+      INFLUX_ORG: n03-iot
+      INFLUX_BUCKET: garden-telemetry
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./backend/data:/app/data
+
+  # 4. Node-RED Rule Engine
+  nodered:
+    image: nodered/node-red:latest
+    container_name: n03-nodered
+    restart: unless-stopped
+    ports:
+      - "1880:1880"
+    volumes:
+      - ./node-red:/data
+
+  # 5. Web Dashboard (Nginx Web Server)
+  web-dashboard:
+    image: nginx:alpine
+    container_name: n03-web-dashboard
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    volumes:
+      - ./web-dashboard:/usr/share/nginx/html:ro
+
+volumes:
+  postgres_data:
+  influxdb_data:

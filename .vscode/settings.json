@@ -1,0 +1,12 @@
+{
+  "liveServer.settings.port": 5500,
+  "liveServer.settings.root": "/web-dashboard",
+  "liveServer.settings.NoBrowser": false,
+  "files.associations": {
+    "*.ino": "cpp"
+  },
+  "editor.tabSize": 2,
+  "C_Cpp.default.includePath": [
+    "${workspaceFolder}/include"
+  ]
+}

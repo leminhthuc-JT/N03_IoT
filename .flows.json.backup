@@ -1,0 +1,1747 @@
+[
+    {
+        "id": "b8938632cee28714",
+        "type": "tab",
+        "label": "DemoDeTai",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "5797212a039625af",
+        "type": "tab",
+        "label": "GreenPulse – Main",
+        "disabled": false,
+        "info": "GreenPulse IoT – Tưới cây tự động\nMilestone 9 – Flow hoàn chỉnh\nTopics: garden/demo/*",
+        "env": []
+    },
+    {
+        "id": "0b3cdf6d1aa31616",
+        "type": "tab",
+        "label": "Automation Rules",
+        "disabled": false,
+        "info": "Automation Rule 1: Auto pump by moisture threshold\nAutomation Rule 2: Offline / timeout detection",
+        "env": []
+    },
+    {
+        "id": "663472e07c202cbe",
+        "type": "tab",
+        "label": "Event Log",
+        "disabled": false,
+        "info": "Ghi nhật ký sự kiện hệ thống",
+        "env": []
+    },
+    {
+        "id": "6cb14bd463a1b954",
+        "type": "mqtt-broker",
+        "name": "HiveMQ Garden",
+        "broker": "broker.hivemq.com",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "e3119fb213838261",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
+        "id": "428094562ec05cce",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#fcfcfd",
+            "primary": "#0d74ce",
+            "bgPage": "#f9f9fb",
+            "groupBg": "#ffffff",
+            "groupOutline": "#d9d9e0"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "9cef5e23dd50712a",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "@flowfuse/node-red-dashboard": "1.33.0"
+        }
+    },
+    {
+        "id": "0a501976c0b4653b",
+        "type": "ui-page",
+        "name": "Page 1",
+        "ui": "e3119fb213838261",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "428094562ec05cce",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": 0,
+                "cols": 3
+            },
+            {
+                "name": "Tablet",
+                "px": 576,
+                "cols": 6
+            },
+            {
+                "name": "Small Desktop",
+                "px": 768,
+                "cols": 9
+            },
+            {
+                "name": "Desktop",
+                "px": 1024,
+                "cols": 12
+            }
+        ],
+        "tabs": [],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "c39cc836a713f897",
+        "type": "ui-group",
+        "name": "Group 1",
+        "page": "0a501976c0b4653b",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": true,
+        "disabled": false,
+        "groupType": "default",
+        "tab": ""
+    },
+    {
+        "id": "92d1490aee94991e",
+        "type": "ui-theme",
+        "name": "GreenPulse Theme",
+        "colors": {
+            "surface": "#f0fdf4",
+            "primary": "#16a34a",
+            "bgPage": "#e7f3ec",
+            "groupBg": "#ffffff",
+            "groupOutline": "#a7c3ae"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "8px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "a1ee97f4e6953ecd",
+        "type": "ui-page",
+        "name": "🌿 Giám sát",
+        "ui": "e3119fb213838261",
+        "path": "/monitor",
+        "icon": "leaf",
+        "layout": "grid",
+        "theme": "92d1490aee94991e",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": 0,
+                "cols": 3
+            },
+            {
+                "name": "Tablet",
+                "px": 576,
+                "cols": 6
+            },
+            {
+                "name": "Desktop",
+                "px": 1024,
+                "cols": 12
+            }
+        ],
+        "tabs": [],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "e0acfbc816c2538a",
+        "type": "ui-page",
+        "name": "🎛 Điều khiển",
+        "ui": "e3119fb213838261",
+        "path": "/control",
+        "icon": "settings",
+        "layout": "grid",
+        "theme": "92d1490aee94991e",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": 0,
+                "cols": 3
+            },
+            {
+                "name": "Tablet",
+                "px": 576,
+                "cols": 6
+            },
+            {
+                "name": "Desktop",
+                "px": 1024,
+                "cols": 12
+            }
+        ],
+        "tabs": [],
+        "order": 2,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "98f39596c3b7891a",
+        "type": "ui-group",
+        "name": "📊 Dữ liệu cảm biến",
+        "page": "a1ee97f4e6953ecd",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": true,
+        "disabled": false,
+        "groupType": "default",
+        "tab": ""
+    },
+    {
+        "id": "245436e6d0b6740b",
+        "type": "ui-group",
+        "name": "🔌 Trạng thái hệ thống",
+        "page": "a1ee97f4e6953ecd",
+        "width": 6,
+        "height": 1,
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": true,
+        "disabled": false,
+        "groupType": "default",
+        "tab": ""
+    },
+    {
+        "id": "ace826e36efaa347",
+        "type": "ui-group",
+        "name": "🎛 Điều khiển",
+        "page": "e0acfbc816c2538a",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": true,
+        "disabled": false,
+        "groupType": "default",
+        "tab": ""
+    },
+    {
+        "id": "157a9f20e040d71d",
+        "type": "ui-group",
+        "name": "⚠ Cảnh báo",
+        "page": "a1ee97f4e6953ecd",
+        "width": 12,
+        "height": 1,
+        "order": 3,
+        "showTitle": true,
+        "className": "",
+        "visible": true,
+        "disabled": false,
+        "groupType": "default",
+        "tab": ""
+    },
+    {
+        "id": "3c62ca00ac00f65b",
+        "type": "mqtt in",
+        "z": "b8938632cee28714",
+        "name": "",
+        "topic": "garden/demo/telemetry",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "6cb14bd463a1b954",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 180,
+        "y": 780,
+        "wires": [
+            [
+                "92bfec372be8fc42"
+            ]
+        ]
+    },
+    {
+        "id": "13d1b17743e03703",
+        "type": "debug",
+        "z": "b8938632cee28714",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "92bfec372be8fc42",
+        "type": "json",
+        "z": "b8938632cee28714",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 410,
+        "y": 680,
+        "wires": [
+            [
+                "13d1b17743e03703",
+                "78efc0d63a034811",
+                "5559a199d8b25ba0",
+                "120172723d429f05",
+                "cf6c395ac42e26e0"
+            ]
+        ]
+    },
+    {
+        "id": "78efc0d63a034811",
+        "type": "function",
+        "z": "b8938632cee28714",
+        "name": "Lấy độ ẩm",
+        "func": "msg.payload = Number(msg.payload.moisture);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 560,
+        "wires": [
+            [
+                "a50bca8ba9c4c8bf"
+            ]
+        ]
+    },
+    {
+        "id": "a50bca8ba9c4c8bf",
+        "type": "ui-gauge",
+        "z": "b8938632cee28714",
+        "name": "Độ ẩm đất",
+        "group": "c39cc836a713f897",
+        "order": 8,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "Độ ẩm đất",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "%",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#d65c5c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "35",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "60",
+                "color": "#53ea6c",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "100",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 810,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4875a6c6c916bf23",
+        "type": "ui-text",
+        "z": "b8938632cee28714",
+        "group": "c39cc836a713f897",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Chế độ hoạt động",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 810,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "5559a199d8b25ba0",
+        "type": "function",
+        "z": "b8938632cee28714",
+        "name": "Chế độ",
+        "func": "msg.payload = msg.payload.mode;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 660,
+        "wires": [
+            [
+                "4875a6c6c916bf23"
+            ]
+        ]
+    },
+    {
+        "id": "120172723d429f05",
+        "type": "function",
+        "z": "b8938632cee28714",
+        "name": "Trạng thái",
+        "func": "\nmsg.payload = msg.payload.pump;\n\nif(msg.payload == true){\n    msg.payload = \"ON\";\n}else{\n    msg.payload = \"OFF\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 740,
+        "wires": [
+            [
+                "782f3c4933ad3dc2"
+            ]
+        ]
+    },
+    {
+        "id": "782f3c4933ad3dc2",
+        "type": "ui-text",
+        "z": "b8938632cee28714",
+        "group": "c39cc836a713f897",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "name": "Trạng thái máy bơm",
+        "label": "Trạng thái máy bơm",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 820,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "cf6c395ac42e26e0",
+        "type": "function",
+        "z": "b8938632cee28714",
+        "name": "Tạo dòng CSV",
+        "func": "const d = msg.payload;\n\nconst time = new Date().toLocaleString(\"sv-SE\", {\n    timeZone: \"Asia/Ho_Chi_Minh\"\n});\n\nmsg.payload =\n    `${time},${d.moisture},${d.adc},${d.pump},${d.valve},${d.mode}\\r\\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 820,
+        "wires": [
+            [
+                "23d662d554cd76d0"
+            ]
+        ]
+    },
+    {
+        "id": "23d662d554cd76d0",
+        "type": "file",
+        "z": "b8938632cee28714",
+        "name": "",
+        "filename": "D:\\hk7\\InternetOfThings\\garden_log.csv",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 880,
+        "y": 820,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "47e19e112e3ed0c5",
+        "type": "mqtt out",
+        "z": "b8938632cee28714",
+        "name": "",
+        "topic": "garden/demo/cmd/mode",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "6cb14bd463a1b954",
+        "x": 850,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "3589937dec0c0c76",
+        "type": "mqtt out",
+        "z": "b8938632cee28714",
+        "name": "",
+        "topic": "garden/demo/cmd/pump",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "6cb14bd463a1b954",
+        "x": 850,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "660187371a9af8f5",
+        "type": "ui-button",
+        "z": "b8938632cee28714",
+        "group": "c39cc836a713f897",
+        "name": "BUTTON MODE",
+        "label": "BUTTON MODE",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "autorenew",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 420,
+        "y": 940,
+        "wires": [
+            [
+                "45da854689cef065"
+            ]
+        ]
+    },
+    {
+        "id": "45da854689cef065",
+        "type": "function",
+        "z": "b8938632cee28714",
+        "name": "Toggle Mode",
+        "func": "let mode = flow.get(\"systemMode\") || \"AUTO\";\n\nmode = mode === \"AUTO\" ? \"MANUAL\" : \"AUTO\";\n\nflow.set(\"systemMode\", mode);\n\n// Output 1: gửi lệnh đến ESP32\nconst command = {\n    payload: mode\n};\n\n// Output 2: cập nhật chế độ trên Dashboard\nconst status = {\n    payload: \"Chế độ hiện tại: \" + mode\n};\n\nreturn [command, status];",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 940,
+        "wires": [
+            [
+                "47e19e112e3ed0c5"
+            ],
+            [
+                "af47bf298f48564d"
+            ]
+        ]
+    },
+    {
+        "id": "af47bf298f48564d",
+        "type": "ui-text",
+        "z": "b8938632cee28714",
+        "group": "c39cc836a713f897",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "text",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 790,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "842c081c7163b81b",
+        "type": "ui-button",
+        "z": "b8938632cee28714",
+        "group": "c39cc836a713f897",
+        "name": "BẬT BƠM",
+        "label": "ON",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "ON",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 410,
+        "y": 1040,
+        "wires": [
+            [
+                "efb5ce3e058987e0"
+            ]
+        ]
+    },
+    {
+        "id": "4ea213d16bc7a574",
+        "type": "ui-button",
+        "z": "b8938632cee28714",
+        "group": "c39cc836a713f897",
+        "name": "TẮT BƠM",
+        "label": "OFF",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "OFF",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 400,
+        "y": 1100,
+        "wires": [
+            [
+                "efb5ce3e058987e0"
+            ]
+        ]
+    },
+    {
+        "id": "efb5ce3e058987e0",
+        "type": "function",
+        "z": "b8938632cee28714",
+        "name": "Manual Pump",
+        "func": "const mode = flow.get(\"systemMode\") || \"AUTO\";\n\nif (mode !== \"MANUAL\") {\n    node.warn(\"Hãy chuyển sang MANUAL trước khi điều khiển bơm.\");\n    return null;\n}\n\nif (msg.payload !== \"ON\" && msg.payload !== \"OFF\") {\n    return null;\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 1080,
+        "wires": [
+            [
+                "3589937dec0c0c76"
+            ]
+        ]
+    },
+    {
+        "id": "287dec62f74402d8",
+        "type": "mqtt in",
+        "z": "5797212a039625af",
+        "name": "MQTT: garden/demo/telemetry",
+        "topic": "garden/demo/telemetry",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "6cb14bd463a1b954",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 100,
+        "wires": [
+            [
+                "fb73e4cf3656a453"
+            ]
+        ]
+    },
+    {
+        "id": "fb73e4cf3656a453",
+        "type": "function",
+        "z": "5797212a039625af",
+        "name": "Validate & Parse JSON",
+        "func": "// Kiểm tra và parse JSON payload\nlet d;\ntry {\n    d = (typeof msg.payload === 'string') ? JSON.parse(msg.payload) : msg.payload;\n} catch(e) {\n    node.warn('JSON parse error: ' + e.message + ' | raw: ' + msg.payload);\n    return null;\n}\n\n// Kiểm tra field bắt buộc\nif (d.moisture === undefined || d.pump === undefined || d.mode === undefined) {\n    node.warn('Thieu truong du lieu: ' + JSON.stringify(d));\n    return null;\n}\n\n// Kiểm tra giá trị hợp lệ\nif (d.moisture < 0 || d.moisture > 100) {\n    node.warn('Do am ngoai pham vi: ' + d.moisture);\n    return null;\n}\n\nmsg.payload = d;\n// Cập nhật thời điểm nhận dữ liệu cuối\nflow.set('lastDataTime', Date.now());\nflow.set('deviceOnline', true);\nflow.set('lastMoisture', d.moisture);\nflow.set('lastPumpStatus', d.pump);\nflow.set('lastMode', d.mode);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "flow.set('lastDataTime', Date.now());\nflow.set('deviceOnline', true);\nflow.set('systemMode', 'AUTO');",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 100,
+        "wires": [
+            [
+                "f6ae755378dae8b2",
+                "105e4897113ceb43",
+                "74ee51d1bfc76290",
+                "abca7e452f09c7a4",
+                "7e01ba3e9593e64f",
+                "4b2ceeb700fb6bd3",
+                "e73baf90a31dd9c8"
+            ]
+        ]
+    },
+    {
+        "id": "f6ae755378dae8b2",
+        "type": "debug",
+        "z": "5797212a039625af",
+        "name": "DEBUG: Raw telemetry",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "fb3e45df77777a4d",
+        "type": "function",
+        "z": "5797212a039625af",
+        "name": "Lấy độ ẩm",
+        "func": "msg.payload = Number(msg.payload.moisture);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 160,
+        "wires": [
+            [
+                "28634e9b3b34f801"
+            ]
+        ]
+    },
+    {
+        "id": "105e4897113ceb43",
+        "type": "function",
+        "z": "5797212a039625af",
+        "name": "Độ ẩm → Gauge",
+        "func": "msg.payload = Number(msg.payload.moisture);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 160,
+        "wires": [
+            [
+                "28634e9b3b34f801"
+            ]
+        ]
+    },
+    {
+        "id": "28634e9b3b34f801",
+        "type": "ui-gauge",
+        "z": "5797212a039625af",
+        "name": "Độ ẩm đất",
+        "group": "98f39596c3b7891a",
+        "order": 1,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "Độ ẩm đất",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "%",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#ef4444",
+                "text": "KHÔ",
+                "textType": "label"
+            },
+            {
+                "from": "35",
+                "color": "#f59e0b",
+                "text": "VỪA",
+                "textType": "label"
+            },
+            {
+                "from": "60",
+                "color": "#22c55e",
+                "text": "ĐỦ ẨM",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "100",
+        "sizeThickness": 20,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": true,
+        "className": "",
+        "x": 920,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "74ee51d1bfc76290",
+        "type": "function",
+        "z": "5797212a039625af",
+        "name": "Độ ẩm → Chart",
+        "func": "msg.payload = Number(msg.payload.moisture);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 220,
+        "wires": [
+            [
+                "8f9f62d70b0b7c88"
+            ]
+        ]
+    },
+    {
+        "id": "8f9f62d70b0b7c88",
+        "type": "ui-chart",
+        "z": "5797212a039625af",
+        "group": "98f39596c3b7891a",
+        "name": "Biểu đồ độ ẩm",
+        "label": "Biểu đồ độ ẩm theo thời gian",
+        "order": 2,
+        "chartType": "line",
+        "category": "Độ ẩm (%)",
+        "categoryType": "str",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "pointShape": "circle",
+        "pointRadius": 3,
+        "colors": [
+            "#22c55e",
+            "#2563eb",
+            "#a855f7"
+        ],
+        "textColor": [
+            "#1f2937",
+            "#1f2937",
+            "#1f2937"
+        ],
+        "textColorDefault": true,
+        "width": 6,
+        "height": 4,
+        "className": "",
+        "interpolation": "linear",
+        "x": 920,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "abca7e452f09c7a4",
+        "type": "function",
+        "z": "5797212a039625af",
+        "name": "Chế độ → Text",
+        "func": "msg.payload = msg.payload.mode;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 300,
+        "wires": [
+            [
+                "efb77009da691ddb"
+            ]
+        ]
+    },
+    {
+        "id": "efb77009da691ddb",
+        "type": "ui-text",
+        "z": "5797212a039625af",
+        "group": "245436e6d0b6740b",
+        "order": 1,
+        "width": 3,
+        "height": 1,
+        "name": "Chế độ hoạt động",
+        "label": "Chế độ",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#16a34a",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 920,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "7e01ba3e9593e64f",
+        "type": "function",
+        "z": "5797212a039625af",
+        "name": "Trạng thái bơm",
+        "func": "const on = msg.payload.pump === true || msg.payload.pump === 'true';\nmsg.payload = on ? '🟢 BƠM ĐANG CHẠY' : '🔴 BƠM TẮT';\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 360,
+        "wires": [
+            [
+                "641428fb6337c7c6"
+            ]
+        ]
+    },
+    {
+        "id": "641428fb6337c7c6",
+        "type": "ui-text",
+        "z": "5797212a039625af",
+        "group": "245436e6d0b6740b",
+        "order": 2,
+        "width": 3,
+        "height": 1,
+        "name": "Trạng thái máy bơm",
+        "label": "Máy bơm",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 920,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "e73baf90a31dd9c8",
+        "type": "function",
+        "z": "5797212a039625af",
+        "name": "Kết nối → Text",
+        "func": "msg.payload = '🟢 ESP32 ONLINE – ' + new Date().toLocaleTimeString('vi-VN');\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 420,
+        "wires": [
+            [
+                "685b01a8ce5dbfb3"
+            ]
+        ]
+    },
+    {
+        "id": "685b01a8ce5dbfb3",
+        "type": "ui-text",
+        "z": "5797212a039625af",
+        "group": "245436e6d0b6740b",
+        "order": 3,
+        "width": 6,
+        "height": 1,
+        "name": "Trạng thái kết nối",
+        "label": "Kết nối ESP32",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": false,
+        "font": "",
+        "fontSize": 14,
+        "color": "#16a34a",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 920,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "4b2ceeb700fb6bd3",
+        "type": "function",
+        "z": "5797212a039625af",
+        "name": "Tạo dòng CSV",
+        "func": "const d = msg.payload;\nconst time = new Date().toLocaleString('sv-SE', { timeZone: 'Asia/Ho_Chi_Minh' });\nmsg.payload = `${time},${d.moisture},${d.adc},${d.pump},${d.valve},${d.mode}\\r\\n`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 480,
+        "wires": [
+            [
+                "27d7910b4b6ebb7a"
+            ]
+        ]
+    },
+    {
+        "id": "27d7910b4b6ebb7a",
+        "type": "file",
+        "z": "5797212a039625af",
+        "name": "CSV Log",
+        "filename": "D:\\hk7\\InternetOfThings\\garden_log.csv",
+        "filenameType": "str",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "utf8",
+        "x": 920,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1ff49c3b2f0ec8a4",
+        "type": "ui-button",
+        "z": "5797212a039625af",
+        "group": "ace826e36efaa347",
+        "name": "Toggle AUTO/MANUAL",
+        "label": "⇄ Đổi chế độ AUTO/MANUAL",
+        "order": 1,
+        "width": 6,
+        "height": 1,
+        "emulateClick": false,
+        "tooltip": "Nhấn để chuyển đổi giữa AUTO và MANUAL",
+        "color": "",
+        "bgcolor": "#2563eb",
+        "className": "",
+        "icon": "autorenew",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "#2563eb",
+        "textColor": "#ffffff",
+        "iconColor": "#ffffff",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 220,
+        "y": 620,
+        "wires": [
+            [
+                "efd5d9aff3301217"
+            ]
+        ]
+    },
+    {
+        "id": "efd5d9aff3301217",
+        "type": "function",
+        "z": "5797212a039625af",
+        "name": "Toggle Mode Logic",
+        "func": "let mode = flow.get('systemMode') || 'AUTO';\nmode = (mode === 'AUTO') ? 'MANUAL' : 'AUTO';\nflow.set('systemMode', mode);\n\nconst cmd = { payload: mode };\nconst statusMsg = { payload: 'Chế độ hiện tại: ' + mode };\n\n// Log sự kiện\nconst logMsg = {\n    payload: `[${new Date().toLocaleString('vi-VN')}] [MODE_CHANGE] Node-RED → Chuyen mode: ${mode}\\n`\n};\n\nreturn [cmd, statusMsg, logMsg];",
+        "outputs": 3,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 620,
+        "wires": [
+            [
+                "c9cae30272a6114d"
+            ],
+            [
+                "e27c8cb403626bcd"
+            ],
+            [
+                "ee5be110cf2f121b"
+            ]
+        ]
+    },
+    {
+        "id": "e27c8cb403626bcd",
+        "type": "ui-text",
+        "z": "5797212a039625af",
+        "group": "ace826e36efaa347",
+        "order": 2,
+        "width": 6,
+        "height": 1,
+        "name": "Chế độ hiện tại (control)",
+        "label": "Chế độ đã chọn",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#2563eb",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 720,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "c9cae30272a6114d",
+        "type": "mqtt out",
+        "z": "5797212a039625af",
+        "name": "→ garden/demo/cmd/mode",
+        "topic": "garden/demo/cmd/mode",
+        "qos": "1",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "6cb14bd463a1b954",
+        "x": 720,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "98ee7c42cc3aa4b7",
+        "type": "ui-button",
+        "z": "5797212a039625af",
+        "group": "ace826e36efaa347",
+        "name": "BẬT BƠM",
+        "label": "💧 BẬT BƠM",
+        "order": 3,
+        "width": 3,
+        "height": 1,
+        "emulateClick": false,
+        "tooltip": "Chỉ hoạt động ở chế độ MANUAL",
+        "color": "",
+        "bgcolor": "#16a34a",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "ON",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "#16a34a",
+        "textColor": "#ffffff",
+        "iconColor": "#ffffff",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 200,
+        "y": 700,
+        "wires": [
+            [
+                "741debd07a5326fc"
+            ]
+        ]
+    },
+    {
+        "id": "e0c9c2c34e7d5064",
+        "type": "ui-button",
+        "z": "5797212a039625af",
+        "group": "ace826e36efaa347",
+        "name": "TẮT BƠM",
+        "label": "⏹ TẮT BƠM",
+        "order": 4,
+        "width": 3,
+        "height": 1,
+        "emulateClick": false,
+        "tooltip": "Chỉ hoạt động ở chế độ MANUAL",
+        "color": "",
+        "bgcolor": "#dc2626",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "OFF",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "#dc2626",
+        "textColor": "#ffffff",
+        "iconColor": "#ffffff",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 200,
+        "y": 760,
+        "wires": [
+            [
+                "741debd07a5326fc"
+            ]
+        ]
+    },
+    {
+        "id": "741debd07a5326fc",
+        "type": "function",
+        "z": "5797212a039625af",
+        "name": "MANUAL Guard + Conflict Check",
+        "func": "const mode = flow.get('systemMode') || 'AUTO';\n\nif (mode !== 'MANUAL') {\n    node.warn('[CONFLICT] Lenh bom bi bo qua: he thong dang o che do AUTO. Chuyen sang MANUAL truoc.');\n    // Thông báo cảnh báo xung đột\n    return [null, { payload: '⚠ Lệnh bị từ chối: Đang ở chế độ AUTO. Hãy chuyển sang MANUAL trước.' }];\n}\n\nif (msg.payload !== 'ON' && msg.payload !== 'OFF') {\n    node.warn('[INVALID] Payload khong hop le: ' + msg.payload);\n    return [null, null];\n}\n\n// Log sự kiện\nconst logMsg = {\n    payload: `[${new Date().toLocaleString('vi-VN')}] [PUMP_CMD] Node-RED Dashboard → ${msg.payload}\\n`\n};\n\nreturn [msg, { payload: 'Lệnh đã gửi: BƠM ' + msg.payload }, logMsg];",
+        "outputs": 3,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 730,
+        "wires": [
+            [
+                "55438f929e821324"
+            ],
+            [
+                "fabb10b0912be178"
+            ],
+            [
+                "ee5be110cf2f121b"
+            ]
+        ]
+    },
+    {
+        "id": "55438f929e821324",
+        "type": "mqtt out",
+        "z": "5797212a039625af",
+        "name": "→ garden/demo/cmd/pump",
+        "topic": "garden/demo/cmd/pump",
+        "qos": "1",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "6cb14bd463a1b954",
+        "x": 720,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "fabb10b0912be178",
+        "type": "ui-text",
+        "z": "5797212a039625af",
+        "group": "157a9f20e040d71d",
+        "order": 1,
+        "width": 12,
+        "height": 1,
+        "name": "Cảnh báo / Thông báo",
+        "label": "⚠ Thông báo",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": false,
+        "font": "",
+        "fontSize": 14,
+        "color": "#dc2626",
+        "wrapText": true,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 720,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "ee5be110cf2f121b",
+        "type": "file",
+        "z": "5797212a039625af",
+        "name": "Event Log File",
+        "filename": "D:\\hk7\\InternetOfThings\\greenpulse_events.log",
+        "filenameType": "str",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "utf8",
+        "x": 720,
+        "y": 820,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2464c560b5d69b84",
+        "type": "mqtt in",
+        "z": "5797212a039625af",
+        "name": "MQTT: garden/demo/status",
+        "topic": "garden/demo/status",
+        "qos": "0",
+        "datatype": "utf8",
+        "broker": "6cb14bd463a1b954",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 900,
+        "wires": [
+            [
+                "76c0d856c13352f9"
+            ]
+        ]
+    },
+    {
+        "id": "76c0d856c13352f9",
+        "type": "function",
+        "z": "5797212a039625af",
+        "name": "LWT Status Handler",
+        "func": "const status = msg.payload.trim().toUpperCase();\nconst time = new Date().toLocaleString('vi-VN');\n\nif (status === 'ONLINE') {\n    flow.set('deviceOnline', true);\n    flow.set('lastDataTime', Date.now());\n    const alert = { payload: `🟢 [${time}] ESP32 đã kết nối` };\n    const log = { payload: `[${time}] [STATUS] ESP32 -> ONLINE\\n` };\n    return [[alert], [log]];\n} else if (status === 'OFFLINE') {\n    flow.set('deviceOnline', false);\n    const alert = { payload: `🔴 [${time}] ⚠ ESP32 MẤT KẾT NỐI (LWT OFFLINE)` };\n    const log = { payload: `[${time}] [STATUS] ESP32 -> OFFLINE (LWT)\\n` };\n    return [[alert], [log]];\n}\nreturn null;",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 900,
+        "wires": [
+            [
+                "fabb10b0912be178",
+                "685b01a8ce5dbfb3"
+            ],
+            [
+                "ee5be110cf2f121b"
+            ]
+        ]
+    },
+    {
+        "id": "6b50c81787227691",
+        "type": "function",
+        "z": "0b3cdf6d1aa31616",
+        "name": "RULE 1: Auto Pump by Moisture Threshold",
+        "func": "// AUTOMATION RULE 1\n// Nếu mode = AUTO và độ ẩm vượt ngưỡng → gửi lệnh bơm\n\nconst d = msg.payload;\nconst mode = flow.get('systemMode') || 'AUTO';\n\nif (mode !== 'AUTO') {\n    // Đang ở MANUAL → không can thiệp\n    return null;\n}\n\nconst DRY = 35;\nconst WET = 60;\nconst lastPump = flow.get('lastPumpStatus');\nconst time = new Date().toLocaleString('vi-VN');\n\nlet command = null;\nlet logText = null;\n\nif (d.moisture < DRY && !lastPump) {\n    // Đất khô, bơm đang tắt → BẬT bơm\n    command = { payload: 'ON' };\n    logText = `[${time}] [AUTO RULE 1] Do am=${d.moisture}% < ${DRY}% → BAT BOM`;\n    node.status({ fill:'green', shape:'dot', text:'BAT BOM: ' + d.moisture + '%' });\n} else if (d.moisture >= WET && lastPump) {\n    // Đủ ẩm, bơm đang bật → TẮT bơm\n    command = { payload: 'OFF' };\n    logText = `[${time}] [AUTO RULE 1] Do am=${d.moisture}% >= ${WET}% → TAT BOM`;\n    node.status({ fill:'blue', shape:'dot', text:'TAT BOM: ' + d.moisture + '%' });\n} else {\n    node.status({ fill:'grey', shape:'ring', text:'Vung trung gian: ' + d.moisture + '%' });\n    return null;\n}\n\nconst logMsg = { payload: logText + '\\n' };\nreturn [command, logMsg];",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "node.status({ fill:'grey', shape:'ring', text:'Cho du lieu...' });",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 160,
+        "wires": [
+            [
+                "771a5b38046aec1d"
+            ],
+            [
+                "dff88a899c96986d"
+            ]
+        ]
+    },
+    {
+        "id": "9ad696ca4bf26fad",
+        "type": "mqtt in",
+        "z": "0b3cdf6d1aa31616",
+        "name": "MQTT: telemetry (Automation)",
+        "topic": "garden/demo/telemetry",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "6cb14bd463a1b954",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 160,
+        "wires": [
+            [
+                "8fe4bc2aa183a8f0"
+            ]
+        ]
+    },
+    {
+        "id": "8fe4bc2aa183a8f0",
+        "type": "json",
+        "z": "0b3cdf6d1aa31616",
+        "name": "Parse JSON",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 340,
+        "y": 160,
+        "wires": [
+            [
+                "6b50c81787227691"
+            ]
+        ]
+    },
+    {
+        "id": "771a5b38046aec1d",
+        "type": "mqtt out",
+        "z": "0b3cdf6d1aa31616",
+        "name": "→ cmd/pump (Auto)",
+        "topic": "garden/demo/cmd/pump",
+        "qos": "1",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "6cb14bd463a1b954",
+        "x": 760,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "dff88a899c96986d",
+        "type": "file",
+        "z": "0b3cdf6d1aa31616",
+        "name": "Auto Event Log",
+        "filename": "D:\\hk7\\InternetOfThings\\greenpulse_events.log",
+        "filenameType": "str",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "utf8",
+        "x": 760,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e26923f81f414e3a",
+        "type": "inject",
+        "z": "0b3cdf6d1aa31616",
+        "name": "RULE 2: Kiểm tra Offline (mỗi 30 giây)",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "30",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "offline_check",
+        "payload": "",
+        "payloadType": "date",
+        "x": 220,
+        "y": 360,
+        "wires": [
+            [
+                "aa9117e8852aa398"
+            ]
+        ]
+    },
+    {
+        "id": "aa9117e8852aa398",
+        "type": "function",
+        "z": "0b3cdf6d1aa31616",
+        "name": "RULE 2: Offline Detection",
+        "func": "// AUTOMATION RULE 2\n// Nếu không nhận được dữ liệu trong 60 giây → coi là OFFLINE\n\nconst TIMEOUT_MS = 60000;  // 60 giây\nconst lastData = flow.get('lastDataTime') || 0;\nconst deviceOnline = flow.get('deviceOnline');\nconst elapsed = Date.now() - lastData;\nconst time = new Date().toLocaleString('vi-VN');\n\nif (lastData > 0 && elapsed > TIMEOUT_MS) {\n    if (deviceOnline !== false) {\n        flow.set('deviceOnline', false);\n        node.status({ fill:'red', shape:'dot', text:'OFFLINE! ' + Math.round(elapsed/1000) + 's' });\n        \n        const alertMsg = { \n            payload: `🔴 [${time}] ⚠ CANH BAO: ESP32 mat ket noi! Khong nhan du lieu trong ${Math.round(elapsed/1000)} giay.` \n        };\n        const logMsg = { \n            payload: `[${time}] [RULE2 OFFLINE] Timeout=${Math.round(elapsed/1000)}s → DeviceOffline\\n` \n        };\n        return [alertMsg, logMsg];\n    }\n} else {\n    if (deviceOnline === false && elapsed <= TIMEOUT_MS) {\n        flow.set('deviceOnline', true);\n    }\n    node.status({ fill:'green', shape:'dot', text:'Online – ' + Math.round(elapsed/1000) + 's ago' });\n}\n\nreturn null;",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "node.status({ fill:'grey', shape:'ring', text:'Khoi dong...' });",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 360,
+        "wires": [
+            [
+                "6a3917be0c643bd0",
+                "f2b66080bcc0cf12"
+            ],
+            [
+                "dff88a899c96986d"
+            ]
+        ]
+    },
+    {
+        "id": "6a3917be0c643bd0",
+        "type": "ui-text",
+        "z": "0b3cdf6d1aa31616",
+        "group": "157a9f20e040d71d",
+        "order": 2,
+        "width": 12,
+        "height": 1,
+        "name": "Cảnh báo Offline",
+        "label": "🔴 Cảnh báo kết nối",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": false,
+        "font": "",
+        "fontSize": 14,
+        "color": "#dc2626",
+        "wrapText": true,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 760,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "f2b66080bcc0cf12",
+        "type": "debug",
+        "z": "0b3cdf6d1aa31616",
+        "name": "DEBUG: Offline Alert",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "e0f22446aa1ca741",
+        "type": "mqtt in",
+        "z": "663472e07c202cbe",
+        "name": "MQTT: Tất cả garden/demo/*",
+        "topic": "garden/demo/#",
+        "qos": "0",
+        "datatype": "utf8",
+        "broker": "6cb14bd463a1b954",
+        "nl": false,
+        "rap": false,
+        "rh": 0,
+        "inputs": 0,
+        "x": 180,
+        "y": 160,
+        "wires": [
+            [
+                "a002e15a0e738ba6"
+            ]
+        ]
+    },
+    {
+        "id": "a002e15a0e738ba6",
+        "type": "function",
+        "z": "663472e07c202cbe",
+        "name": "Format Event Log",
+        "func": "const time = new Date().toLocaleString('vi-VN');\nconst topic = msg.topic;\nconst payload = (typeof msg.payload === 'object') ? JSON.stringify(msg.payload) : msg.payload;\nmsg.payload = `[${time}] [MQTT] ${topic}: ${payload}\\n`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 160,
+        "wires": [
+            [
+                "71a57f838b96b407",
+                "99dfa937ed8b8d52"
+            ]
+        ]
+    },
+    {
+        "id": "71a57f838b96b407",
+        "type": "debug",
+        "z": "663472e07c202cbe",
+        "name": "DEBUG: All Events",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "99dfa937ed8b8d52",
+        "type": "file",
+        "z": "663472e07c202cbe",
+        "name": "MQTT Event Log File",
+        "filename": "D:\\hk7\\InternetOfThings\\greenpulse_events.log",
+        "filenameType": "str",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "utf8",
+        "x": 680,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    }
+]

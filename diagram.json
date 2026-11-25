@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "author": "N03 Team",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": -67.2, "left": 14.44, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": -116.5, "left": -86.6, "attrs": {} },
+    { "type": "wokwi-relay-module", "id": "relay1", "top": 163.4, "left": -134.4, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 159.6,
+      "left": 90.2,
+      "attrs": { "color": "red" },
+      "label": "PUMP LED (GPIO25)"
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 195.95,
+      "left": 163.2,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "board-ssd1306",
+      "id": "oled1",
+      "top": 31.94,
+      "left": 134.63,
+      "attrs": { "i2cAddress": "0x3c" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -118.8,
+      "left": -130.6,
+      "attrs": { "color": "limegreen" },
+      "label": "VALVE LED (GPIO27)"
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 13.55,
+      "left": -134.4,
+      "attrs": { "value": "1000" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+
+    [ "esp:34", "pot1:SIG", "green",  [ "h-9.45", "v-28.8", "h-18.8" ] ],
+    [ "esp:3V3", "pot1:VCC", "red",   [ "h0" ] ],
+    [ "esp:GND.1", "pot1:GND", "black", [ "h-19.05", "v-105.6", "h-19.2" ] ],
+
+    [ "esp:21",   "oled1:SDA", "green", [ "h86.4", "v9.6", "h-0.07" ] ],
+    [ "esp:22",   "oled1:SCL", "green", [ "h19.2", "h57.3" ] ],
+    [ "esp:3V3",  "oled1:VCC", "red",   [ "v-38.4", "h163.2" ] ],
+    [ "esp:GND.2","oled1:GND", "black", [ "h57.6" ] ],
+
+    [ "esp:26",   "relay1:IN",  "green", [ "h-163.05", "v153.8" ] ],
+    [ "esp:5V",   "relay1:VCC", "red",   [ "h-143.85", "v48" ] ],
+    [ "esp:GND.1","relay1:GND", "black", [ "h-153.45", "v106" ] ],
+    [ "relay1:COM","esp:GND.1", "green", [ "h20.4", "v-39.8", "v-67.2" ] ],
+
+    [ "esp:25", "r1:2", "orange", [ "h38.4", "v134.4", "h105.6" ] ],
+    [ "r1:1",   "led1:A", "orange", [ "v0" ] ],
+    [ "esp:GND.1", "led1:C", "black", [ "h-9.45", "v134.4", "h95.6" ] ],
+
+    [ "r2:2", "esp:27", "green", [ "v0" ] ],
+    [ "r2:1", "led2:A", "green", [ "v0" ] ],
+    [ "led2:C", "esp:GND.1", "black", [ "v19.2", "h105.6", "v-67.2" ] ]
+  ],
+  "dependencies": {}
+}
